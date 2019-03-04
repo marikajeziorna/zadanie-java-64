@@ -84,7 +84,7 @@ public class TasksList {
 
         List<Task> filteredTasksList = new ArrayList<>();
         for (Task task : tasksList) {
-            if (task.getDueDate().compareTo(fromLocalDateTime) > 0 && task.getDueDate().compareTo(toLocalDateTime) < 0) {
+            if (task.getDueDate().isAfter(fromLocalDateTime) && task.getDueDate().isBefore(toLocalDateTime)) {
                 filteredTasksList.add(task);
             }
         }
